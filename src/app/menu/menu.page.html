@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      RESTAURANT
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <agm-map
+  [style.height.px]="height"
+  [latitude]="lat"
+  [zoom]="zoom"
+  [longitude]="lng">
+    <agm-marker
+      *ngFor="let rest of restaurants"
+      [latitude]="rest.Address.lat"
+      [longitude]="rest.Address.lng"
+      [title]="rest.Name"
+      [iconUrl]="google"
+      [label]="rest.label"
+      (markerClick)="clickedMarker(rest.id)">
+    </agm-marker>
+ </agm-map>
+</ion-content>

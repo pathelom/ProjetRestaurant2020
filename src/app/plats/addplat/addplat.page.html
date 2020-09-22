@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ajouter un plat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="addPlat" (submit)="formSubmit()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Nom</ion-label>
+        <ion-input type="text" formControlName="Name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Prix</ion-label>
+        <ion-input type="text"  formControlName="prix"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Description</ion-label>
+        <ion-input type="text" formControlName="Description"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Restaurant</ion-label>
+        <ion-select formControlName="restaurant">
+          <ion-select-option *ngFor="let r of restaurants" value="{{r.id}}">{{r.Name}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-button [disabled]="addPlat.invalid" expand="full" type="submit">Enregistrer</ion-button>
+  </form>
+
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>modifier</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="update" (submit)="formSubmit()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Nom</ion-label>
+        <ion-input type="text" formControlName="Name" value="{{plats.Name}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Prix</ion-label>
+        <ion-input type="text"  formControlName="prix" value="{{plats.prix}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Description</ion-label>
+        <ion-input type="text" formControlName="Description" value="{{plats.Description}}"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="full" type="submit">Modifier</ion-button>
+  </form>
+
+</ion-content>

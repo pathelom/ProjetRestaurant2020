@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Restaurant {{name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="rest">
+  <div style="margin-top: 10px;">
+    <ion-text>
+      Restaurant {{name | uppercase}}
+    </ion-text>
+  </div>
+  <div padding>
+    <ion-text color="primary">
+      <p>Contact</p>
+      <h6>
+        <ion-icon name="phone-portrait"></ion-icon>
+         {{rest.phoneNumber}}
+        </h6>
+        </ion-text>
+     <ion-text color="primary">
+       <h6>
+        <ion-icon name="mail"></ion-icon>
+         {{rest.emailAddress}}
+       </h6>
+      </ion-text>
+    
+  </div>
+ <ion-list>
+   <ion-text color="danger"><h4 style="text-align: center;">Nos Plats</h4></ion-text>
+  <ion-item *ngFor=" let plat of rest.plats" >
+  <ion-label> {{plat.Name}} <p color="primary">{{plat.Description}}</p></ion-label>
+    {{plat.prix}} F
+  </ion-item>
+</ion-list>
+
+  
+</ion-content>
